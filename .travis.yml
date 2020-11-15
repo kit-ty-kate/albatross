@@ -2,12 +2,13 @@ language: c
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
 script: bash -ex .travis-docker.sh
 sudo: false
+dist: focal
 services:
   - docker
 env:
   global:
     - PACKAGE="albatross"
-    - DISTRO=ubuntu-lts
+    - DISTRO=ubuntu
     - TESTS=false
   matrix:
     - OCAML_VERSION=4.08
