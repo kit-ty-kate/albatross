@@ -133,7 +133,7 @@ let policy =
            (required ~label:"bridges" Asn.S.(sequence_of utf8_string)))
 
 let my_explicit : ?cls:Asn.S.cls -> int -> ?label:string -> 'a Asn.S.t -> 'a Asn.S.t =
-  fun ?cls id ?label:_ asn -> Asn.S.explicit ?cls id asn
+  fun ?cls id ?label asn -> Asn.S.explicit ?cls id ?label asn
 
 let console_cmd =
   let f = function
